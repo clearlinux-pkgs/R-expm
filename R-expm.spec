@@ -4,13 +4,13 @@
 #
 Name     : R-expm
 Version  : 0.999.3
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/expm_0.999-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/expm_0.999-3.tar.gz
-Summary  : Matrix Exponential, Log, 'etc'
+Summary  : Matrix Exponential, Log, etc
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-expm-lib
+Requires: R-expm-lib = %{version}-%{release}
 BuildRequires : buildreq-R
 
 %description
@@ -32,11 +32,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1537638839
+export SOURCE_DATE_EPOCH=1552757377
 
 %install
+export SOURCE_DATE_EPOCH=1552757377
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1537638839
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -71,8 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library expm|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  expm || :
 
 
 %files
@@ -107,12 +106,19 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/expm/help/paths.rds
 /usr/lib64/R/library/expm/html/00Index.html
 /usr/lib64/R/library/expm/html/R.css
-/usr/lib64/R/library/expm/libs/symbols.rds
 /usr/lib64/R/library/expm/po/en@quot/LC_MESSAGES/R-expm.mo
 /usr/lib64/R/library/expm/po/en@quot/LC_MESSAGES/expm.mo
 /usr/lib64/R/library/expm/po/fr/LC_MESSAGES/expm.mo
 /usr/lib64/R/library/expm/po/fr/LC_MESSAGES/fr.mo
 /usr/lib64/R/library/expm/test-tools.R
+/usr/lib64/R/library/expm/tests/Frechet-test.R
+/usr/lib64/R/library/expm/tests/bal-ex.R
+/usr/lib64/R/library/expm/tests/ex.R
+/usr/lib64/R/library/expm/tests/ex2.R
+/usr/lib64/R/library/expm/tests/exact-ex.R
+/usr/lib64/R/library/expm/tests/expm-Cond.R
+/usr/lib64/R/library/expm/tests/log+sqrt.R
+/usr/lib64/R/library/expm/tests/matpow-ex.R
 
 %files lib
 %defattr(-,root,root,-)
