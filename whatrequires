@@ -1,5 +1,6 @@
 # This file contains recursive sources that require this package
 R-DescTools
+R-adegenet
 R-msm
 R-phytools
 R-spdep
