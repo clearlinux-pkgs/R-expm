@@ -4,15 +4,14 @@
 #
 Name     : R-expm
 Version  : 0.999.4
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/expm_0.999-4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/expm_0.999-4.tar.gz
-Summary  : Matrix Exponential, Log, etc
+Summary  : Matrix Exponential, Log, 'etc'
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-expm-lib = %{version}-%{release}
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 and related quantities.
@@ -27,21 +26,22 @@ lib components for the R-expm package.
 
 %prep
 %setup -q -c -n expm
+cd %{_builddir}/expm
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571826084
+export SOURCE_DATE_EPOCH=1589517742
 
 %install
-export SOURCE_DATE_EPOCH=1571826084
+export SOURCE_DATE_EPOCH=1589517742
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
