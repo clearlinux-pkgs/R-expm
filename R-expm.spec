@@ -4,7 +4,7 @@
 #
 Name     : R-expm
 Version  : 0.999.6
-Release  : 46
+Release  : 47
 URL      : https://cran.r-project.org/src/contrib/expm_0.999-6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/expm_0.999-6.tar.gz
 Summary  : Matrix Exponential, Log, 'etc'
