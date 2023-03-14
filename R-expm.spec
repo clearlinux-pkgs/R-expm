@@ -4,7 +4,7 @@
 #
 Name     : R-expm
 Version  : 0.999.7
-Release  : 50
+Release  : 51
 URL      : https://cran.r-project.org/src/contrib/expm_0.999-7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/expm_0.999-7.tar.gz
 Summary  : Matrix Exponential, Log, 'etc'
@@ -12,9 +12,6 @@ Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-expm-lib = %{version}-%{release}
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 and related quantities, using traditional and modern methods.
@@ -36,10 +33,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1673284637
+export SOURCE_DATE_EPOCH=1678818012
 
 %install
-export SOURCE_DATE_EPOCH=1673284637
+export SOURCE_DATE_EPOCH=1678818012
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
